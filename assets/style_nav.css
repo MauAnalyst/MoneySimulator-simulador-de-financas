@@ -57,8 +57,13 @@ header {
 
 
 /* ---- start logo ---- */
-header .logo img{
-    width: 4rem;
+header .logo{
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+header .logo span {
+    color: #3DE6B3;
 }
 
 /* ---- end logo ---- */
