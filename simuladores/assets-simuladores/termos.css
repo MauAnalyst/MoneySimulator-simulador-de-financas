@@ -1,0 +1,58 @@
+main {
+    width: 75%;
+    margin: auto;
+    padding-top: 100px;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+.conteudo-termos {
+    padding: 20px;
+}
+
+.conteudo-termos h1, 
+.conteudo-termos h2 {
+    color: #3D71E6;
+}
+
+.conteudo-termos h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.conteudo-termos .politica-de-privacidade {
+    margin-top: 100px;
+}
+
+.conteudo-termos h2 {
+    font-size: 1.3rem;
+    margin-top: 20px;
+    margin-left: 1.5rem;
+}
+
+.conteudo-termos p {
+    margin-bottom: 15px;
+    margin-left: 3rem;
+    font-size: 1rem;
+}
+
+.conteudo-termos p strong {
+    font-weight: bold;
+}
+
+.conteudo-termos a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.conteudo-termos a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 580px) {
+    main {
+        width: 95%; 
+    }
+}
