@@ -151,3 +151,7 @@ footer a {
         display: none;
     }
 }
+
+section h1 {
+    font-size: 2rem;
+}
