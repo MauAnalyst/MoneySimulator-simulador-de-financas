@@ -1,0 +1,22 @@
+header nav ul .nav-simuladores .nav-principal{ /*  nav selecionada */
+    background: linear-gradient(to left, #3D71E6, #3DC7E6);
+    color: #fff;
+}
+
+header nav ul .nav-simuladores .options a:nth-child(2) { /*  item nav selecionada */
+    background-color: #3D71E6;
+    color: #fff;
+}
+
+/*------------------------------------------------------------------- */
+/*------------------------------------------------------------------- */
+
+main {
+    width: 75%;
+    margin: auto;
+    padding-top: 100px;
+}
+
+section {
+    margin-bottom: 50px;
+}
