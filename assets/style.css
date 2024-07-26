@@ -74,8 +74,7 @@ section {
 
 /* --------- coleção de ferramentas */
 
-.new-ferramenta {
-    background-color: #3DE6B3;
+.ferramenta-pendente, .ferramenta-em-andamento {
     color: #fff;
     padding: 0.2rem 0.5rem;
     border-radius: 10px;
@@ -83,6 +82,12 @@ section {
     margin: 0px 10px;
     font-size: 0.9rem;
     /*border: 1px solid #3DE6B3; */
+}
+.ferramenta-pendente {
+    background-color: #e63d3d;
+}
+.ferramenta-em-andamento {
+    background-color: #3DE6B3;
 }
 
 .bloco-ferramentas h2 {
