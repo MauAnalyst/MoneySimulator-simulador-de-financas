@@ -1,3 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato","Poppins","Montserrat","Roboto", sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --color-one: #E7ECF7;
+    --color-two: #3D71E6;
+    --color-three: #3DC7E6;
+    --color-four: #989CA5;
+    --color-five: #656870;
+    --color-six: #222326;
+    --color-seven: #3DE6B3;
+    --color-eight: #2c3e50;
+    --color-neven: #3de63d; 
+}
+
+/*------------------------------------------------------------------- */
+/*------------------------------------------------------------------- */
+
+
 header nav ul .nav-simuladores .nav-principal{ /*  nav selecionada */
     background: linear-gradient(to left, #3D71E6, #3DC7E6);
     color: #fff;
@@ -19,4 +43,319 @@ main {
 
 section {
     margin-bottom: 50px;
+    transition: all 0.2s ease-in;
+}
+
+/*------------------------------------------------------------------- */
+/*------------------------------------------------------------------- */
+
+.intro-section p {
+    margin-top: 20px;
+}
+
+.intro-section .blocos-taxas {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.intro-section .blocos-taxas .bloco-info {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0px 2px 5px rgb(141, 143, 148, .2);
+    max-width: 12rem;
+}
+
+.intro-section .blocos-taxas .bloco-info h4 {
+    font-size: 0.8rem;
+}
+
+.intro-section .blocos-taxas .bloco-info h2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: var(--color-two);
+}
+
+
+
+/*------------------------------------------------------------------- */
+/*------------------------------------------------------------------- */
+
+main .formulario-section h1 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+main .formulario-section form {
+    margin: 30px 0;
+}
+
+main .formulario-section .form-item {
+    margin: 5px 0;
+}
+
+main .formulario-section .form-itens {
+    display: flex;
+    gap: 15px;
+}
+
+main .formulario-section .form-itens .form-item {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+}
+
+main .formulario-section .form-itens .form-item label {
+    margin-left: 10px;
+    font-size: 1.1rem;
+}
+
+main .formulario-section .form-itens .form-item input[type="number"] {
+    border: none;
+    margin-left: 5px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    padding: 0.2rem 0.7rem;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+main .formulario-section .form-itens .form-item .input-money {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-left: 5px;
+    padding: 0rem 0.5rem;
+    box-shadow: 0px 2px 5px rgb(141, 143, 148, .2);
+}
+
+main .formulario-section .form-itens .form-item .input-money p {
+    color: var(--color-five);
+}
+
+main .formulario-section .form-itens .form-item input[type="number"]:focus {
+    outline: none;
+}
+
+main .formulario-section .form-itens .form-item .input-intervalo input[type="number"]{
+    box-shadow: 0px 2px 5px rgb(141, 143, 148, .2);
+    border-radius: 10px;
+    padding: 0.2rem 0.5rem;
+    width: 30%;
+    width: 70px;
+    min-width: 50px;
+}
+
+
+/* entrada do periodo */
+main .formulario-section .form-itens .form-item .input-intervalo {
+    display: flex;
+    gap: 0.5rem;
+} 
+main .formulario-section .form-itens .form-item .input-intervalo .select-intervalo{
+    position: relative;
+} 
+
+main .formulario-section .form-itens .form-item .input-intervalo .select-intervalo .screem-intervalo {
+    display: flex;
+    width: 90px;
+    text-align: center;
+    justify-content: center;
+    background-color: var(--color-three);
+    background: linear-gradient(to left, #3D71E6, #3DC7E6);
+    background: #3DC7E6;
+    color: var(--color-six);
+    color: #fff;
+    padding: 0 0.5rem;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgb(141, 143, 148, .2);
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+}
+main .formulario-section .form-itens .form-item .input-intervalo .select-intervalo .screem-intervalo:hover {
+    background: #3D71E6;
+}
+
+
+main .formulario-section .form-itens .form-item .input-intervalo .select-intervalo .screem-intervalo p {
+    font-weight: 700;
+}
+
+main .formulario-section .form-itens .form-item .input-intervalo .select-intervalo .options-intervalo {
+    position: absolute;
+    padding: 0.3rem;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 2px 5px rgb(141, 143, 148, .2);
+    display: none;
+}
+
+main .formulario-section .form-itens .form-item .input-intervalo .select-intervalo .options-intervalo li {
+    margin: 0.2rem 0;
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+main .formulario-section .form-itens .form-item .input-intervalo .select-intervalo .options-intervalo li:hover {
+    background-color: var(--color-two);
+    color: #fff;
+}
+
+/*------------------------------------------------------------------- */
+/*------------------------------------------------------------------- */
+
+main .formulario-section .form-itens .form-item #taxaCDI, main .formulario-section .form-itens .form-item #percentualCDI {
+    width: 70%;
+} 
+
+main .formulario-section .form-itens .form-item .input-money:nth-child(2){
+    width: 40%;
+}
+
+
+/*------------------------------------------------------------------- */
+/*------------------------------------------------------------------- */
+
+/*  buttons */
+main .formulario-section .buttons button {
+    height: 100%;
+    font-size: 1.4rem;
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--color-two);
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+main .formulario-section .buttons button .material-symbols-outlined {
+    font-size: 1.4rem;
+}
+
+main .formulario-section .buttons button:hover {
+    background-color: var(--color-eight);
+}
+
+
+/*------------------------------------------------------------------- */
+/*------------------------------------------------------------------- */
+
+.resultado-section {
+    display: none;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgb(141, 143, 148, .2);
+    opacity: 0;
+}
+
+.resultado-section.entrada {
+    animation: fadeIn 0.3s forwards;
+}
+
+.resultado-section.saida {
+    animation: fadeOut 0.3s forwards;
+  }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0px);
+
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+/* -------------- */
+
+.resultado-section .resultados {
+    margin: 20px 0;
+    display: flex;
+    gap: 20px;
+}
+
+.resultado-section .resultados .item-resultado {
+    padding: 20px 30px;
+    border: 1px solid var(--color-six);
+    border-radius: 10px;
+    max-width: 250px;
+}
+.resultado-section .resultados .item-resultado h4 {
+    margin-bottom: 5px;
+}
+
+.resultado-section .resultados .item-resultado span {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--color-seven);
+}
+
+.resultado-section .resultados .item-resultado .material-symbols-outlined {
+    background-color: var(--color-seven);
+    color: #fff;
+    padding: 0px 5px;
+    border-radius: 10px;
+}
+
+
+
+
+/*------------------------------------------------------------------- */
+/*------------------------------------------------------------------- */
+
+.explicacao-cdi {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    max-width: 800px;
+    transition: all 0.2s ease-in-out;
+    
+}
+.explicacao-cdi h3 {
+    color: #2c3e50;
+    margin-top: 20px;
+}
+.explicacao-cdi p {
+    margin: 10px 0;
+}
+.explicacao-cdi ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+.explicacao-cdi ul li {
+    margin-bottom: 10px;
+}
+.explicacao-cdi em {
+    display: block;
+    margin: 10px 0;
+    font-style: italic;
+}
+.explicacao-cdi .formula-cdi-diario {
+    text-align: center;
 }
