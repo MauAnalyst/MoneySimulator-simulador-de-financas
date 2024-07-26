@@ -38,9 +38,162 @@
         </nav>
     </header>
     <main>
-        <section class="conteudo">
+       <!-- commit 1 adionando aqui -->
+        <section class="intro-section">
             <h1>Simulador de Rendimentos em CDI</h1>
+            <p>Abaixo os dados atuais da taxa do CDI, você poderá encontrar mais informações após o simulador.</p>
+            <div class="blocos-taxas">
+                <div class="bloco-info">
+                    <h4>CDI Mensal do Mês Atual (<span class="mes-atual">00/0000</span>)</h4>
+                    <h2 class="value-cdi-mes-atual">0%</h2>
+                </div>
+                <div class="bloco-info">
+                    <h4>Média a.m. do CDI (<span class="ano-atual">0000</span>)</h4>
+                    <h2 class="value-media-cdi">0%</h2>
+                </div>
+                <div class="bloco-info">
+                    <h4>CDI Acumulado <span class="ano-atual">0000</span></h4>
+                    <h2 class="value-cdi-acumulado-ano-atual">0%</h2>
+                </div>
+                <div class="bloco-info">
+                    <h4>CDI Acumulado <span class="ano-anterior">0000</span></h4>
+                    <h2 class="value-cdi-acumulado-ano-anterior">0%</h2>
+                </div>
+            </div>
         </section>
+        <section class="formulario-section">
+            <h1>Comece a Simular</h1>
+            <form>
+                <div class="form-itens">
+                    
+                    <div class="form-item">
+                        <label for="initialInvest">Invesimento Inicial:</label>
+                        <div class="input-money">
+                            <p>R$</p>
+                            <input type="number" id="initialInvest" name="initial_invest" placeholder="0,00">
+                        </div>
+                    </div>
+                    <div class="form-item">
+                        <label for="monthInvest">Investimento Mensal:</label>
+                        <div class="input-money">
+                            <p>R$</p>
+                            <input type="number" id="monthInvest" name="month_invest" placeholder="0,00">
+                        </div>
+                    </div>
+                    <div class="form-item">
+                        <label for="intervalo">Resgate em:</label>
+                        <div class="input-intervalo">
+                            <input type="number" id="intervalo" name="intervalo" placeholder="12">
+                            <div class="select-intervalo">
+                                <div class="screem-intervalo">
+                                    <p>Meses</p>
+                                    <span class="material-symbols-outlined">arrow_drop_down</span>
+                                </div>
+                                <ul class="options-intervalo">
+                                    <li>Meses</li>
+                                    <li>Anos</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-itens">
+                    <div class="form-item">
+                        <label for="taxaCDI">Taxa CDI:</label>
+                        <div class="input-money">
+                            <input type="number" name="taxa-cdi" id="taxaCDI">
+                            <p>%</p>
+                        </div>
+                    </div>
+                    <div class="form-item">
+                        <label for="percentualCDI">Percentual do CDI</label>
+                        <div class="input-money">
+                            <input type="number" name="percentual-cdi" id="percentualCDI">
+                            <p>%</p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- botões resultado e delete-->
+            <div class="buttons">
+                <button class="resultado">Resultado</button>
+                <button class="delete"><span class="material-symbols-outlined">delete</span></button>
+            </div>
+        </section>
+        <section class="resultado-section">
+            <h2>Resultado Geral:</h2>
+            <div class="resultados">
+                <div class="item-resultado">
+                    <h4>Total Depositado</h4>
+                    <h2 id="total-depositado">0,00</h2>
+                </div>
+                <div class="item-resultado">
+                    <h4>Rendimentos</h4>
+                    <h2 id="rendimentos">0,00</h2>
+                </div>
+                <div class="item-resultado">
+                    <h4>Total Final</h4>
+                    <h2 id="total-final">0,00</h2>
+                    <span>0% <span class="material-symbols-outlined">north_east</span></span>
+                </div>
+            </div>
+            <h2>Detalhes do resultado</h2>
+            <div class="resultados">
+                <div class="item-resultado">
+                    <h4>Rendimento diário</h4>
+                    <h2>0,00</h2>
+                </div>
+                <div class="item-resultado">
+                    <h4>Rendimento mensal</h4>
+                    <h2>0,00</h2>
+                </div>
+            </div>
+        </section>
+        <section class="resumoCDI-section">
+            <div class="explicacao-cdi">
+                <p>O CDI (Certificado de Depósito Interbancário) é um importante indicador do mercado financeiro brasileiro. Ele reflete a taxa de juros praticada nas operações de empréstimo entre bancos e é amplamente utilizado como referência para diversas aplicações financeiras. Abaixo, uma explicação detalhada sobre o CDI:</p>
+
+                <h3>O que é o CDI?</h3>
+                <p>O CDI é um título emitido por instituições financeiras, geralmente com prazo de um dia útil, com o objetivo de captar recursos de outros bancos. Esses empréstimos interbancários são necessários para garantir que as instituições financeiras mantenham suas reservas em dia, conforme exigido pelo Banco Central.</p>
+
+                <h3>Como funciona o CDI?</h3>
+                <ul>
+                    <li><strong>Empréstimos entre bancos</strong>: Os bancos, no final de cada dia, podem ter déficits ou excedentes de caixa. Aqueles com excedentes emprestam aos que estão com déficits, utilizando os CDIs para formalizar esses empréstimos.</li>
+                    <li><strong>Taxa DI</strong>: A taxa DI (Depósito Interbancário) é a taxa de juros média ponderada dos CDIs emitidos no dia. Esta taxa é calculada pela CETIP (Central de Custódia e de Liquidação Financeira de Títulos) e é expressa em base anual.</li>
+                </ul>
+
+                <h3>Importância do CDI</h3>
+                <p>O CDI é um dos principais benchmarks de rendimento no mercado financeiro brasileiro e serve como referência para diversas aplicações, tais como:</p>
+                <ul>
+                    <li><strong>CDBs (Certificados de Depósito Bancário)</strong>: Muitos CDBs oferecem rendimento atrelado a um percentual do CDI, como 100% do CDI, 90% do CDI, etc.</li>
+                    <li><strong>Fundos de investimento</strong>: Especialmente os fundos DI, que buscam acompanhar a variação do CDI.</li>
+                    <li><strong>Empréstimos e financiamentos</strong>: Taxas de juros de muitos produtos de crédito podem ser ajustadas conforme a variação do CDI.</li>
+                </ul>
+
+                <h3>Cálculo do CDI</h3>
+                <p>A taxa do CDI é expressa em termos anuais, mas, para aplicações financeiras que o utilizam como referência, o cálculo diário é necessário. O CDI diário pode ser calculado usando a fórmula:</p>
+                <p class="formula-cdi-diario"><em>CDI Diário = (1 + CDI Anual)<sup>(1/252)</sup> - 1</em></p>
+                <p>Onde 252 representa o número de dias úteis em um ano financeiro no Brasil.</p>
+
+                <h3>Vantagens e Desvantagens</h3>
+                <p><strong>Vantagens:</strong></p>
+                <ul>
+                    <li><strong>Estabilidade</strong>: O CDI tende a refletir a política monetária do Banco Central, sendo geralmente uma taxa de juros estável.</li>
+                    <li><strong>Acessibilidade</strong>: Muitos produtos financeiros acessíveis ao público em geral estão atrelados ao CDI.</li>
+                    <li><strong>Referência confiável</strong>: Serve como uma referência confiável para comparar rendimentos de diversas aplicações financeiras.</li>
+                </ul>
+                <p><strong>Desvantagens:</strong></p>
+                <ul>
+                    <li><strong>Baixa rentabilidade em períodos de juros baixos</strong>: Quando a taxa Selic (taxa básica de juros da economia) está baixa, o CDI também tende a estar baixo, o que pode reduzir a rentabilidade das aplicações atreladas a ele.</li>
+                    <li><strong>Complexidade para iniciantes</strong>: Para investidores iniciantes, entender como o CDI influencia diferentes produtos financeiros pode ser complexo.</li>
+                </ul>
+
+                <h3>Conclusão</h3>
+                <p>O CDI é uma peça fundamental do sistema financeiro brasileiro, servindo como referência para diversas operações e investimentos. Conhecer e entender o CDI é crucial para qualquer pessoa interessada em finanças e investimentos no Brasil.</p>
+            </div>
+        </section>
+        <!-- commit 1 terminando aqui -->
     </main>
 
     <footer>
