@@ -42,7 +42,7 @@
        <!-- commit 1 adionando aqui -->
         <section class="intro-section">
             <h1>Simulador de Rendimentos em CDI</h1>
-            <p>Abaixo os dados atuais da taxa do CDI, você poderá encontrar mais informações após o simulador.</p>
+            <p>Abaixo os dados atuais da taxa do CDI, você poderá encontrar mais informações após o simulador, ou <a href="#explicaoCDI">clicando aqui</a>.</p>
             <div class="blocos-taxas">
                 <div class="bloco-info">
                     <h4>CDI Mensal do Mês Atual (<span class="mes-atual">00/0000</span>)</h4>
@@ -140,7 +140,7 @@
                 </div>
             </div>
             <h2>Detalhes do resultado</h2>
-            <div class="resultados">
+             <!--<div class="resultados">
                 <div class="item-resultado">
                     <h4>Rendimento diário</h4>
                     <h2>0,00</h2>
@@ -149,10 +149,25 @@
                     <h4>Rendimento mensal</h4>
                     <h2>0,00</h2>
                 </div>
+            </div>-->
+            <div class="formulas">
+                <p><em>TF = TD + R</em></p>
+                <p><em>TD = VI + (VM x (n - 1))</em></p>
+                <p><em>R = ((VI(1 + i)<sup>n</sup>) + (VMx(((1 + (i/100))<sup>n</sup> -1)/i))) - TD</em></p>
             </div>
+            <p class="sendo">Sendo:</p>
+            <div class="detalhes-formulas">
+                <p><em>TF = Total Final</em></p>
+                <p><em>TD = Total Depositado</em></p>
+                <p><em>R = Rendimento</em></p>
+                <p><em>VI = Invesimento Inicial</em></p>
+                <p><em>VM = Invesimento Mensal</em></p>
+                <p><em>n = resgate</em></p>
+                <p><em>i = taxa/100</em></p>
+            </div>   
         </section>
         <section class="resumoCDI-section">
-            <div class="explicacao-cdi">
+            <div id="explicaoCDI" class="explicacao-cdi">
                 <p>O CDI (Certificado de Depósito Interbancário) é um importante indicador do mercado financeiro brasileiro. Ele reflete a taxa de juros praticada nas operações de empréstimo entre bancos e é amplamente utilizado como referência para diversas aplicações financeiras. Abaixo, uma explicação detalhada sobre o CDI:</p>
 
                 <h3>O que é o CDI?</h3>
