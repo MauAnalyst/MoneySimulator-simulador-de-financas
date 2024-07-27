@@ -309,6 +309,7 @@ main .formulario-section .buttons button:hover {
 }
 
 .resultado-section .resultados .item-resultado span {
+    margin-top: 5px;
     font-size: 1rem;
     display: flex;
     align-items: center;
