@@ -51,7 +51,7 @@ anoAtualTaxa.forEach(e => e.innerHTML = anoAtual);
 anoAnteriorTaxa.innerHTML = anoAtual -1;
 
 //---- definindo os dados das taxas
-const apiCDI = "../../APIs/cdi.json'";
+const apiCDI = "../APIs/cdi.json";
 
 async function buscaDados(){
     try{
