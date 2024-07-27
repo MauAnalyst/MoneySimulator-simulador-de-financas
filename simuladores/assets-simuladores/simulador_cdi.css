@@ -318,7 +318,7 @@ main .formulario-section .buttons button:hover {
     display: flex;
     align-items: center;
     gap: 5px;
-    color: var(--color-seven);
+    color: #3ECFA3;
 }
 
 .resultado-section .resultados .item-resultado .material-symbols-outlined {
