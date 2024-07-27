@@ -134,6 +134,7 @@ const sectionResulte = document.querySelector('.resultado-section');
 const totalDepositado = document.querySelector('.resultado-section .resultados .item-resultado #total-depositado');
 const rendimento = document.querySelector('.resultado-section .resultados .item-resultado #rendimentos');
 const totalFinal = document.querySelector('.resultado-section .resultados .item-resultado #total-final');
+const porcentTotalFinal = document.querySelector('.resultado-section .resultados .item-resultado #porcent-total-final');
 
 
 //exibindo resultado
@@ -143,21 +144,58 @@ buttonResulte.addEventListener('click', function(){
     sectionResulte.classList.add('entrada');
     sectionResulte.style.display = 'block';
 
-    switch (SelectIntervaloP.textContent) {    
-        case 'Meses':
-            // definindo o valor total depositado
-            totalDepositado.textContent = FormataValor(+initialInvest.value + monthInvest.value*(inputIntervalo.value-1));
+    buscaDados().then(() => {
+        if(initialInvest.value === '' && monthInvest.value === ''){
+            console.log('Não irá calcular nada')
+        } else {
+            let definePorcentCDI = inputTaxaCDI.value*(inputPorcentagemCDI.value/100);
 
-            // definindo o valor dos rendimentos
-            let VFinicial = CalcVFI(+initialInvest.value, 0.87 , inputIntervalo.value);
-            let VFmensal = CalcVFM(+monthInvest.value, 0.87, inputIntervalo.value-1);
-            rendimento.textContent = FormataValor(+ VFinicial + VFmensal); 
-            break;
+            if(inputIntervalo.value === '' || inputIntervalo.value === 0){
+                inputIntervalo.value = 12
+            }
 
-        default:
-            totalDepositado.textContent = FormataValor(+initialInvest.value + monthInvest.value*((inputIntervalo.value*12)-1));
-            break;
-    }
+            switch (SelectIntervaloP.textContent) {    
+                case 'Meses':
+                    
+
+                    // definindo o valor total depositado
+                    let valueDepositado = +initialInvest.value + monthInvest.value*(inputIntervalo.value-1)
+                    totalDepositado.textContent = FormataValor(valueDepositado);
+        
+                    // definindo o valor dos rendimentos
+                    let VFinicial = CalcVFI(+initialInvest.value, definePorcentCDI , inputIntervalo.value);
+                    let VFmensal = CalcVFM(+monthInvest.value, definePorcentCDI, inputIntervalo.value-1);
+                    rendimento.textContent = FormataValor(+ VFinicial + VFmensal - valueDepositado); 
+
+                    //definindo o valor total
+                    totalFinal.textContent = FormataValor(+ VFinicial + VFmensal);
+                    porcentTotalFinal.textContent = `${(((+ VFinicial + VFmensal - valueDepositado)/valueDepositado)*100).toFixed(2).replace(".",",")}%`;
+
+                    break;
+                    
+        
+                default:
+                    totalDepositado.textContent = FormataValor(+initialInvest.value + monthInvest.value*((inputIntervalo.value*12)-1));
+
+                    // definindo o valor total depositado
+                    let valueDepositado2 = +initialInvest.value + monthInvest.value*(inputIntervalo.value*12-1)
+                    totalDepositado.textContent = FormataValor(valueDepositado2);
+        
+                    // definindo o valor dos rendimentos
+                    let VFinicial2 = CalcVFI(+initialInvest.value, definePorcentCDI , inputIntervalo.value*12);
+                    let VFmensal2 = CalcVFM(+monthInvest.value, definePorcentCDI, inputIntervalo.value*12-1);
+                    rendimento.textContent = FormataValor(+ VFinicial2 + VFmensal2 - valueDepositado2); 
+
+                    //definindo o valor total
+                    totalFinal.textContent = FormataValor(+ VFinicial2 + VFmensal2);
+                    porcentTotalFinal.textContent = `${(((+ VFinicial2 + VFmensal2 - valueDepositado2)/valueDepositado2)*100).toFixed(2).replace(".",",")}%`;
+
+                    break;
+                };
+           
+        };
+
+    });
 });
 
 buttonDelete.addEventListener('click', function(){
@@ -171,6 +209,11 @@ buttonDelete.addEventListener('click', function(){
     initialInvest.value = '';
     monthInvest.value = '';
     inputIntervalo.value = '';
+
+    totalDepositado.textContent = 'R$ 0,00';
+    rendimento.textContent = 'R$ 0,00';
+    totalFinal.textContent = 'R$ 0,00';
+    porcentTotalFinal.textContent = '0%';
     
 });
 
