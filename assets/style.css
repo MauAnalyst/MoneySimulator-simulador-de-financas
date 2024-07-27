@@ -84,10 +84,10 @@ section {
     /*border: 1px solid #3DE6B3; */
 }
 .ferramenta-pendente {
-    background-color: #e63d3d;
+    background-color: #DF4D4D;
 }
 .ferramenta-em-andamento {
-    background-color: #3DE6B3;
+    background-color: #3ECFA3;
 }
 
 .bloco-ferramentas h2 {
