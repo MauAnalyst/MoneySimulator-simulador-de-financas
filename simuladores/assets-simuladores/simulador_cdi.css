@@ -53,6 +53,10 @@ section {
     margin-top: 20px;
 }
 
+.intro-section p a {
+    text-decoration: underline;
+}
+
 .intro-section .blocos-taxas {
     display: flex;
     gap: 10px;
@@ -324,7 +328,19 @@ main .formulario-section .buttons button:hover {
     border-radius: 10px;
 }
 
+.resultado-section .formulas {
+    margin-top: 10px;
+    margin-left: 50px;
+    font-weight: 700;
+}
 
+.resultado-section .sendo{
+    margin-top: 10px;
+}
+
+.resultado-section .detalhes-formulas {
+    margin-left: 50px;
+}
 
 
 /*------------------------------------------------------------------- */
@@ -359,4 +375,25 @@ main .formulario-section .buttons button:hover {
 }
 .explicacao-cdi .formula-cdi-diario {
     text-align: center;
+}
+
+/*------------------------------------------------------------------- */
+/*------------------------------------------------------------------- */
+
+
+@media screen and (max-width: 680px) {
+    .intro-section .blocos-taxas {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    main .formulario-section .form-itens {
+        flex-direction: column;
+    }
+
+    .resultado-section .resultados {
+        margin: 20px auto;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
 }
