@@ -323,7 +323,7 @@ main .formulario-section .buttons button:hover {
 }
 
 .resultado-section .resultados .item-resultado .material-symbols-outlined {
-    background-color: var(--color-seven);
+    background-color: #3ECFA3;
     color: #fff;
     padding: 0px 5px;
     border-radius: 10px;
