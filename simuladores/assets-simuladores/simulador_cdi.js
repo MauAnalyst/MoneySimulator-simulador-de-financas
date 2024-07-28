@@ -136,6 +136,13 @@ const rendimento = document.querySelector('.resultado-section .resultados .item-
 const totalFinal = document.querySelector('.resultado-section .resultados .item-resultado #total-final');
 const porcentTotalFinal = document.querySelector('.resultado-section .resultados .item-resultado #porcent-total-final');
 
+const investInicial = document.querySelector('.resultado-section .resultados .item-resultado #investimento-inicial');
+const investMensal = document.querySelector('.resultado-section .resultados .item-resultado #investimento-mensal');
+const rendimentoInicial = document.querySelector('.resultado-section .resultados .item-resultado #rendimento-inicial');
+const rendimentoMensal = document.querySelector('.resultado-section .resultados .item-resultado #rendimento-mensal');
+const porcentRendInicial = document.querySelector('.resultado-section .resultados .item-resultado #porcent-rendimento-inicial');
+const porcentRendMensal = document.querySelector('.resultado-section .resultados .item-resultado #porcent-rendimento-mensal');
+
 
 //exibindo resultado
 buttonResulte.addEventListener('click', function(){
@@ -157,39 +164,66 @@ buttonResulte.addEventListener('click', function(){
             switch (SelectIntervaloP.textContent) {    
                 case 'Meses':
                     
-
+                    //------ geral
                     // definindo o valor total depositado
-                    let valueDepositado = +initialInvest.value + monthInvest.value*(inputIntervalo.value-1)
+                    let valueDepositado = +initialInvest.value + monthInvest.value*(inputIntervalo.value)
                     totalDepositado.textContent = FormataValor(valueDepositado);
         
                     // definindo o valor dos rendimentos
                     let VFinicial = CalcVFI(+initialInvest.value, definePorcentCDI , inputIntervalo.value);
-                    let VFmensal = CalcVFM(+monthInvest.value, definePorcentCDI, inputIntervalo.value-1);
+                    let VFmensal = CalcVFM(+monthInvest.value, definePorcentCDI, inputIntervalo.value);
                     rendimento.textContent = FormataValor(+ VFinicial + VFmensal - valueDepositado); 
 
                     //definindo o valor total
                     totalFinal.textContent = FormataValor(+ VFinicial + VFmensal);
                     porcentTotalFinal.textContent = `${(((+ VFinicial + VFmensal - valueDepositado)/valueDepositado)*100).toFixed(2).replace(".",",")}%`;
 
+                    // ------- datalhes
+                    //valor investimento inicial
+                    investInicial.textContent = FormataValor(+initialInvest.value);
+                    investMensal.textContent = FormataValor(+monthInvest.value*(inputIntervalo.value));
+
+                    //rendimento inicial
+                    rendimentoInicial.textContent = FormataValor(VFinicial - initialInvest.value);
+                    porcentRendInicial.textContent = `${(((VFinicial - initialInvest.value)/initialInvest.value)*100).toFixed(2).replace(".",",")}%`
+
+                    //rendimento mensal
+                    rendimentoMensal.textContent = FormataValor(VFmensal - (monthInvest.value*inputIntervalo.value)); 
+                    porcentRendMensal.textContent = `${(((VFmensal - (monthInvest.value * inputIntervalo.value)) / (monthInvest.value * inputIntervalo.value)) * 100).toFixed(2).replace(".",",")}%`;
+                       
                     break;
                     
         
                 default:
                     totalDepositado.textContent = FormataValor(+initialInvest.value + monthInvest.value*((inputIntervalo.value*12)-1));
 
+                    // ------- datalhes
                     // definindo o valor total depositado
-                    let valueDepositado2 = +initialInvest.value + monthInvest.value*(inputIntervalo.value*12-1)
+                    let valueDepositado2 = +initialInvest.value + monthInvest.value*(inputIntervalo.value*12)
                     totalDepositado.textContent = FormataValor(valueDepositado2);
         
                     // definindo o valor dos rendimentos
                     let VFinicial2 = CalcVFI(+initialInvest.value, definePorcentCDI , inputIntervalo.value*12);
-                    let VFmensal2 = CalcVFM(+monthInvest.value, definePorcentCDI, inputIntervalo.value*12-1);
+                    let VFmensal2 = CalcVFM(+monthInvest.value, definePorcentCDI, inputIntervalo.value*12);
                     rendimento.textContent = FormataValor(+ VFinicial2 + VFmensal2 - valueDepositado2); 
 
                     //definindo o valor total
                     totalFinal.textContent = FormataValor(+ VFinicial2 + VFmensal2);
                     porcentTotalFinal.textContent = `${(((+ VFinicial2 + VFmensal2 - valueDepositado2)/valueDepositado2)*100).toFixed(2).replace(".",",")}%`;
 
+                    // ------- datalhes
+                    //valor investimento inicial
+                    investInicial.textContent = FormataValor(+initialInvest.value);
+                    investMensal.textContent = FormataValor(+monthInvest.value*(alteraIntervalo));
+
+                    //rendimento inicial
+                    rendimentoInicial.textContent = FormataValor(VFinicial2 - initialInvest.value);
+                    porcentRendInicial.textContent = `${(((VFinicial2 - initialInvest.value)/initialInvest.value)*100).toFixed(2).replace(".",",")}%`
+
+                    //rendimento mensal
+                    rendimentoMensal.textContent = FormataValor(VFmensal2 - (monthInvest.value*alteraIntervalo)); 
+                    porcentRendMensal.textContent = `${(((VFmensal2 - (monthInvest.value * alteraIntervalo)) / (monthInvest.value * alteraIntervalo)) * 100).toFixed(2).replace(".",",")}%`;
+                 
                     break;
                 };
            
@@ -214,6 +248,12 @@ buttonDelete.addEventListener('click', function(){
     rendimento.textContent = 'R$ 0,00';
     totalFinal.textContent = 'R$ 0,00';
     porcentTotalFinal.textContent = '0%';
+    investInicial.textContent = 'R$ 0,00';
+    investMensal.textContent = 'R$ 0,00';
+    rendimentoInicial.textContent = 'R$ 0,00';
+    porcentRendInicial.textContent = '0%';
+    rendimentoMensal.textContent = 'R$ 0,00'; 
+    porcentRendMensal.textContent = '0%';
     
 });
 
