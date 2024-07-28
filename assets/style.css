@@ -152,6 +152,9 @@ section {
 /* -------------------------------------------------------------------- */
 
 @media screen and (max-width: 648px) {
+    main {
+        width: 90%;
+    }
     main .ferramentas-section {
         flex-direction: column;
     }
