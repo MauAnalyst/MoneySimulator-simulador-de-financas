@@ -383,6 +383,9 @@ main .formulario-section .buttons button:hover {
 
 
 @media screen and (max-width: 680px) {
+    main {
+        width: 90%;
+    }
     .intro-section .blocos-taxas {
         display: grid;
         grid-template-columns: repeat(2, 1fr); 
