@@ -312,6 +312,10 @@ main .formulario-section .buttons button:hover {
     margin-bottom: 5px;
 }
 
+.resultado-section .resultados .item-resultado h2 {
+    color: var(--color-two);
+}
+
 .resultado-section .resultados .item-resultado span {
     margin-top: 5px;
     font-size: 1rem;
